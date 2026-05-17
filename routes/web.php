@@ -1,15 +1,12 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect()->route('registration.index');
 });
 
-Route::get('/registrations', function () {
-    return view('registration.index');
-})->name('registration.index');
-
-Route::get('/register', function () {
-    return view('registration.create');
-})->name('registration.create');
+Route::get('/registrations', [RegisterController::class, 'index'])->name('registration.index');
+Route::get('/register', [RegisterController::class, 'create'])->name('registration.create');
+Route::post('/register', [RegisterController::class, 'store'])->name('registration.store');

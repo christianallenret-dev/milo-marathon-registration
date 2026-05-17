@@ -10,8 +10,8 @@
 <body>
     <header class="flex items-center justify-between max-w-5xl mx-auto px-6 py-4 border-b">
         <h1 class="text-4xl font-bold tracking-tight text-gray-400"> Milo Marathon Registration</h1>
-        <a href="">All Registrants</a>
-        <a href=""> Add New Registrant </a>
+        <a href="{{ route('registration.index')}}">All Registrants</a>
+        <a href="{{ route('registration.create') }}"> Add New Registrant </a>
     </header>
 
     <main>
